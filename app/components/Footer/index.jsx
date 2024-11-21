@@ -45,7 +45,7 @@ const Footer = () => {
               <Large to="/">Tell us everything</Large>
               <Para>Do you have any question? Feel free to reach out.</Para>
               <a href="mailto:l.qqbadze@gmail.com">
-                <Chat>Let's Chat</Chat>
+                <Chat>Let&apos;s Chat</Chat>
               </a>
             </Col>
             <Col lg={8} md={8} sm={12} xs={12}>
