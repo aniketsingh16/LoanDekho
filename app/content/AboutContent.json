@@ -1,16 +1,17 @@
 {
-  "title": "Light, fast & responsive",
-  "text": "This template is ready to use, so you don't need to change anything at a component level, unless you want to customize the default styling.",
+  "title": "Our Story",
+  "text": "At LoanDhekho.com, we understand that time matters when securing a loan. We simplify the process with minimal paperwork and fast approval, ensuring you get the funds you need without delays. Whether for an emergency or new opportunity, our streamlined system helps you access your loan quickly, so you can focus on what truly matters."
+,
   "section": [
     {
-      "title": "Why Antd?",
-      "content": "Ant Design is a React UI library that has a lot of easy-to-use components for building elegant UI.",
-      "icon": "notes.svg"
+      "title": "Why LoanDhekho.com?",
+      "content": "With proven growth, we provide fast, reliable financial solutions and a seamless loan process when you need it most.",
+      "icon": "growth.png"
     },
     {
-      "title": "Why styled-components?",
-      "content": "Styled Components gives you total control over your components.",
-      "icon": "notes.svg"
+      "title": "Client Well-being",
+      "content": "Customer satisfaction is our top priority, ensuring fast, hassle-free loans and exceptional service every time.",
+      "icon": "appreciation.png"
     }
   ]
 }

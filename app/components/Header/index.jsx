@@ -1,6 +1,8 @@
 "use client";
 import { useState } from "react";
 import { Row, Col, Drawer } from "antd";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import Container from "../../common/Container";
 import { SvgIcon } from "../../common/SvgIcon";
 import { Button } from "../../common/Button";
@@ -14,10 +16,25 @@ import {
   Label,
   Outline,
   Span,
+  Hover
 } from "./styles";
 
 const Header = () => {
   const [visible, setVisibility] = useState(false);
+  const pathname = usePathname(); // Detects the current route
+  const isInsurancePage = pathname === "/insurance"; // Check if on Insurance page
+
+  // If we are on the Insurance page, hide all links except the logo
+  if (isInsurancePage) {
+    return (
+      <Container>
+        <LogoContainer href="/" aria-label="homepage">
+          <SvgIcon src="LoanDhekho.png" width="220px"/>
+        </LogoContainer>
+      </Container>
+      
+    );
+  }
 
   const toggleButton = () => {
     setVisibility(!visible);
@@ -34,15 +51,20 @@ const Header = () => {
 
     return (
       <>
+        <CustomNavLinkSmall onClick={() => scrollTo("about")}>
+          <Hover>About Us</Hover>
+        </CustomNavLinkSmall>
+
         <CustomNavLinkSmall onClick={() => scrollTo("mission")}>
-          <Span>Home Loan</Span>
+          <Hover>Our Mission</Hover>
         </CustomNavLinkSmall>
-        <CustomNavLinkSmall onClick={() => scrollTo("product")}>
-          <Span>Car Loan</Span>
+
+        <Link href='/insurance'>
+        <CustomNavLinkSmall>
+          <Hover>Insurances</Hover>
         </CustomNavLinkSmall>
-        <CustomNavLinkSmall onClick={() => scrollTo("mission")}>
-          <Span>Personal Loan</Span>
-        </CustomNavLinkSmall>
+        </Link>
+
         <CustomNavLinkSmall
           style={{ width: "180px" }}
           onClick={() => scrollTo("contact")}
@@ -56,9 +78,15 @@ const Header = () => {
   };
 
   return (
+
     <HeaderSection>
+      {/* <SvgIcon src="LoanDekho.png" width="220px" height="auto" /> */}
       <Container>
-        <Row justify="end">
+        <Row justify="space-between" align="center">
+        
+      <LogoContainer href="/" aria-label="homepage">
+        <SvgIcon src="LoanDhekho.png" width="220px"/>
+      </LogoContainer>
           <NotHidden>
             <MenuItem />
           </NotHidden>
